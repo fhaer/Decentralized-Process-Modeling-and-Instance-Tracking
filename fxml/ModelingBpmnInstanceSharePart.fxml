@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.fha.dpmi.view.e4.rcp.parts.ModelingBpmnInstanceShareController">
+   <children>
+      <GridPane VBox.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="343.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <BorderPane fx:id="bpModel" prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <ScrollPane fx:id="spModel" fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+                     <content>
+                        <WebView fx:id="wvModel" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" />
+                     </content>
+                  </ScrollPane>
+               </center>
+            </BorderPane>
+         </children>
+      </GridPane>
+      <GridPane prefWidth="689.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="110.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btOpenInTool" mnemonicParsing="false" onAction="#btOpenInToolClicked" prefHeight="25.0" prefWidth="100.0" text="→ ext. Tool" GridPane.columnIndex="5" GridPane.halignment="RIGHT" />
+            <Label fx:id="lbStatus" text="Status" />
+            <Button fx:id="btLoad" mnemonicParsing="false" onAction="#btLoadClicked" prefHeight="25.0" prefWidth="90.0" text="Load" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+            <Button fx:id="btClear" mnemonicParsing="false" onAction="#btClearClicked" prefWidth="90.0" text="Clear" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <Button fx:id="btMark" mnemonicParsing="false" onAction="#btMarkClicked" prefHeight="25.0" prefWidth="90.0" text="Mark" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
+            <Button fx:id="btSave" mnemonicParsing="false" onAction="#btSaveClicked" prefHeight="25.0" prefWidth="90.0" text="Save" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </children>
+</VBox>

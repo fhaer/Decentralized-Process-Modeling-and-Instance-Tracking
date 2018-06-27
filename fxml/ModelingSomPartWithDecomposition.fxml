@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.fha.dpmi.view.e4.rcp.parts.ModelingSomController">
+   <children>
+      <GridPane VBox.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="319.0" minHeight="0.0" prefHeight="7.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="343.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Accordion visible="false">
+              <panes>
+                <TitledPane animated="false" text="Decomposition">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                     <graphic>
+                        <TreeTableView prefHeight="54.0" prefWidth="300.0">
+                          <columns>
+                              <TreeTableColumn prefWidth="254.0" text="Object Decomposition">
+                                 <columns>
+                                  <TreeTableColumn prefWidth="75.0" text="Object ID" />
+                                  <TreeTableColumn prefWidth="75.0" text="Full Name" />
+                                 </columns>
+                              </TreeTableColumn>
+                          </columns>
+                        </TreeTableView>
+                     </graphic>
+                </TitledPane>
+                <TitledPane animated="false" text="untitled 2">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                     <graphic>
+                        <TreeTableView prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                              <TreeTableColumn prefWidth="75.0" text="Transaction Decomposition">
+                                 <columns>
+                                  <TreeTableColumn prefWidth="75.0" text="Transaction ID" />
+                                  <TreeTableColumn prefWidth="75.0" text="Full Name" />
+                                    <TreeTableColumn prefWidth="75.0" text="Object References">
+                                       <columns>
+                                          <TreeTableColumn prefWidth="75.0" text="Source Object ID" />
+                                          <TreeTableColumn prefWidth="75.0" text="Target Object ID" />
+                                       </columns>
+                                    </TreeTableColumn>
+                                 </columns>
+                              </TreeTableColumn>
+                          </columns>
+                        </TreeTableView>
+                     </graphic>
+                </TitledPane>
+                <TitledPane animated="false" text="untitled 3">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <content>
+                  <AnchorPane fx:id="apModel">
+                     <children>
+                        <Group fx:id="gpModel">
+                           <children>
+                              <Canvas fx:id="cvModel" height="572.0" onContextMenuRequested="#cvModelContextMenu" onMouseClicked="#cvModelClicked" onMouseDragged="#cvModelDragged" width="918.0" />
+                           </children>
+                        </Group>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </GridPane>
+      <GridPane prefWidth="689.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="12.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="65.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="113.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="lbStatus" text="Status" />
+            <Button fx:id="btLoad" mnemonicParsing="false" onAction="#btLoadClicked" prefHeight="25.0" prefWidth="59.0" text="Load" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+            <Button fx:id="btCreate" mnemonicParsing="false" onAction="#btCreateClicked" prefWidth="59.0" text="Create" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Open in ADOxx" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
+          <Button fx:id="btSave" mnemonicParsing="false" onAction="#btSaveClicked" prefWidth="59.0" text="Save" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </children>
+</VBox>

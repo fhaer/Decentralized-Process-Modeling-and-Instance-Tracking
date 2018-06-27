@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>BPMNModel</title>
+    <style>
+        html,body,#modelArea {
+            height: 100%;
+            width: 100%;
+        }
+	    body {
+	      overflow-x: hidden;
+	      overflow-y: hidden;
+	    }
+    </style>
+</head>
+<body>
+    <script src="bpmn-modeler.production.min.js"></script>
+    <script src="bpmnio-jquery.js"></script>
+
+    <div id="modelArea"></div>
+
+    <script>
+    	var xml = '';
+
+        var viewer = new BpmnJS({
+            container: $('#modelArea')
+        });
+
+        function drawModel() {
+            viewer.importXML(xml, function(err) {
+				viewer.get('eventBus').on('element.click', function(e) {
+					onModelElementSelectListener.setSelectedModelElement(e.element.id, e.element.businessObject.name, e.element.type);
+					//viewer.invoke(function(elementRegistry, modeling) {
+					//	var obj = elementRegistry.get(e.element.id).businessObject;
+					//	onModelElementSelectListener.setSelectedModelElement(obj.id, obj.name, obj.$type);
+					//});
+				});
+	            if (err) {
+	                alert('error: ' + err.message);
+	                alert(err);
+	            } else {
+	                viewer.get('canvas').zoom('1');
+	                alert('Model loaded');
+	            }
+            });
+        }
+
+        function saveModel() {
+            viewer.saveXML({ format: true }, function(err, xmldoc) {
+		    	xml = xmldoc;
+		    });
+		    return xml;
+        }
+
+        function clearModel() {
+            viewer.destroy();
+            alert('');
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+de.fha.dpmi.hashing
+de.fha.dpmi.modeling
+de.fha.dpmi.modeling.bpmn
+de.fha.dpmi.modeling.bpmn.elements
+de.fha.dpmi.modeling.bpmn.fileio
+de.fha.dpmi.modeling.fileio
+de.fha.dpmi.modeling.som
+de.fha.dpmi.modeling.som.elements
+de.fha.dpmi.modeling.som.fileio
+de.fha.dpmi.state
+de.fha.dpmi.util
+de.fha.dpmi.versioning
+de.fha.dpmi.view.e4.rcp.handlers
+de.fha.dpmi.view.e4.rcp.handlers.ethereum
+de.fha.dpmi.view.e4.rcp.parts
